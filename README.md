@@ -2,10 +2,10 @@
 
 This portal is a single page application, built to display following technical capabilities:
 
-1. Angular : Framework used to build the application.
+1. Angular : Framework to build the application.
 2. ngrx : For state management.
 3. Angular material : For building UI.
-2. JavaScript (ES6)
+2. TypeScript
 3. CSS3
 4. HTML
 5. ExpressJS: NodeJS Server to mock a prod server. 
@@ -15,7 +15,7 @@ It currently has 3 views - welcome, login and dashboard. Dashboard is a private 
 ## Pre requisites
 1. Node.js version 8.x or 10.x.
 2. npm client & npm package manager.
-3. Angular CLI. To install `npm install -g @angular/cli`.
+3. Angular CLI. To install run `npm install -g @angular/cli`.
 4. Run `npm install` to install all the required dependencies.
 
 
@@ -35,6 +35,6 @@ Currently the app has only two dummy users:
 
 Use devlopment server for front-end development. It starts a mock server and serves the application.
 
-Note: For mocking API, you need may additional tools like postman etc.
+Note: For mocking API, you may need additional tools like postman etc.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
