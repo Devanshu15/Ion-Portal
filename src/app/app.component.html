@@ -1,0 +1,6 @@
+<div class="header">
+  <div>Ion Portal</div>
+  <div>Status: <b>{{status}}</b></div>
+</div>
+<div *ngIf="showLoader" class="loader"><mat-spinner></mat-spinner></div>
+<router-outlet></router-outlet>

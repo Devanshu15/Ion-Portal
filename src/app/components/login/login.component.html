@@ -1,0 +1,27 @@
+<div class="signup-container">
+  <h2>Log in</h2>
+  <mat-form-field>
+    <input matInput placeholder="Username" [formControl]="username" 
+        [errorStateMatcher]="dirtyStateMatcher">
+    <mat-error *ngIf="username.hasError('specialChars')">
+        Following inputs are invalid ^ / . , \
+    </mat-error>
+    <mat-error *ngIf="username.hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" [formControl]="password"
+        [errorStateMatcher]="dirtyStateMatcher">
+    <mat-error *ngIf="password.hasError('specialChars')">
+        Following inputs are invalid ^ / . , \
+    </mat-error>
+    <mat-error *ngIf="password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <div class="actions-bar">
+    <button mat-raised-button color="primary" routerLink="/">Cancel</button>  
+    <button mat-raised-button color="primary" [disabled]="username.invalid || password.invalid" (click)="login()">Sign in</button>
+  </div>
+</div>
