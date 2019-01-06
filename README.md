@@ -1,6 +1,6 @@
 # ION Portal
 
-This portal is single page application, built to display the following technical capabilities:
+This portal is a single page application, built to display following technical capabilities:
 
 1. Angular : Framework used to build the application.
 2. ngrx : For state management.
