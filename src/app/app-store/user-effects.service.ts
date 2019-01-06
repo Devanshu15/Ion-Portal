@@ -10,15 +10,15 @@ import { NgPlural } from '@angular/common';
 
 export declare interface UserEffects {
   login: Observable<Action>;
-  //logout: Observable<Action>;
+  logout: Observable<Action>;
 }
 
+/** Service for sending login and logout request to server. */
 @Injectable()
 export class UserEffectsService implements UserEffects {
   @Effect()
   login:  Observable<Action> = this.actions.pipe(
     ofType<Login>(UserActions.LOGIN),
-    //map(action => new UpdateUserInfo({userInfo: {firstName: '', lastName: '', status: UserStatus.LOGGED_OUT}, status: true}))
     flatMap((action) => this.http.post<LoginResponse>('login', action.payload)
                                       .pipe(switchMap((res: LoginResponse) => {
                                         if (res.success) {
@@ -43,7 +43,6 @@ export class UserEffectsService implements UserEffects {
   @Effect()
   logout: Observable<Action> = this.actions.pipe(
     ofType<Logout>(UserActions.LOGOUT),
-    //map(action => new UpdateUserInfo({userInfo: {firstName: 'Devanshu', lastName: 'Singh', status: UserStatus.LOGGED_IN}, status: true}))
     flatMap((action) => this.http.get<LogoutResponse>('logout')
                                       .pipe(map ((res: LogoutResponse) => {
                                         if (res.success) {

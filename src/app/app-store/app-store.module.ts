@@ -18,6 +18,7 @@ export const reducers: ActionReducerMap<AppState> = {
 })
 export class AppStoreModule {}
 
+/** Reducer for updating  user state.*/
 export function userReducer(
     state: UserState = {firstName: '', lastName: '', status: UserStatus.LOGGED_OUT},
     action: Action) {
@@ -35,11 +36,7 @@ export function userReducer(
   return state;
 }
 
-
-export const selectAppState = createFeatureSelector<AppState>('app');
-export const selectUserInfo = createSelector(selectAppState, state => state.user);
-export const selectUserStatus = createSelector(selectUserInfo, (state) => state.status);
-
+/** Reducer for updating error messages received from server api. */
 export function errorReducer(state: {message: ''}, action: Action) {
   if (action instanceof ServerError) {
     return action.payload;
@@ -47,4 +44,11 @@ export function errorReducer(state: {message: ''}, action: Action) {
 return state;
 }
 
+/** Returns the app state. */
+export const selectAppState = createFeatureSelector<AppState>('app');
+/** Returns user state from app state. */
+export const selectUserInfo = createSelector(selectAppState, state => state.user);
+/** Returns user's current status. */
+export const selectUserStatus = createSelector(selectUserInfo, (state) => state.status);
+/** Returns server errors message. */
 export const selectErrorMessage = createSelector(selectAppState, state => state.errorMessage);

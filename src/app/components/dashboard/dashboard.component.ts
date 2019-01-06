@@ -6,6 +6,7 @@ import { LoggingOut, Logout } from '../../app-store/actions';
 import { UserStatus, UserState, AppState } from '../../app-store/interfaces';
 import { Observable } from 'rxjs';
 
+/** Represents users private view. */
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

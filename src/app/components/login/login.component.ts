@@ -7,6 +7,7 @@ import { LoggingIn, Login } from '../../app-store/actions';
 import { Router } from '@angular/router';
 import { UserStatus, AppState } from '../../app-store/interfaces';
 
+/** Displays Login form. */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
