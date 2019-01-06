@@ -10,7 +10,7 @@ import { LoginGaurdService, LogoutGaurdService } from './auth-gaurds.service';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'login', canActivate:[LogoutGaurdService], component: LoginComponent },
+  { path: 'login', canActivate: [LogoutGaurdService], component: LoginComponent },
   { path: 'dashboard', canActivate: [LoginGaurdService], component: DashboardComponent },
   { path: '**', component: WelcomeComponent },
 ];

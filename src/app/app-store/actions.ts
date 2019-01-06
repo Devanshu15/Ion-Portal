@@ -1,12 +1,12 @@
 import {LoginResponse, LoginState, UserState} from './interfaces';
-import {Action} from '@ngrx/store'
+import {Action} from '@ngrx/store';
 
 export enum UserActions {
   LOGIN = 'login',
   LOGOUT = 'logout',
   UPDATE = 'update',
   LOGGINGIN = 'logging in',
-  LOGGINGOUT = 'logging out',  
+  LOGGINGOUT = 'logging out',
 }
 
 export enum AppAction {
@@ -35,7 +35,7 @@ export class LoggingOut implements Action {
   readonly type = UserActions.LOGGINGOUT;
 }
 
-export class ServerError implements Action{
+export class ServerError implements Action {
   readonly type = AppAction.error;
   constructor(public payload: {message: string}) {}
 }

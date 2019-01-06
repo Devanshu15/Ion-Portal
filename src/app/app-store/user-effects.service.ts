@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Action, Store } from '@ngrx/store';
 import { Effect, Actions, ofType } from '@ngrx/effects';
-import {flatMap, map, switchMap} from 'rxjs/operators'
+import {flatMap, map, switchMap} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { UserActions, Login, UpdateUserInfo, Logout, ServerError } from './actions';
 import { UserStatus, LoginResponse, LogoutResponse } from './interfaces';
@@ -28,14 +28,14 @@ export class UserEffectsService implements UserEffects {
                                             status: UserStatus.LOGGED_IN,
                                           };
                                           return [new UpdateUserInfo(userInfo)];
-                                          
                                         } else {
                                           const userInfo = {
                                             firstName: '',
                                             lastName: '',
                                             status: UserStatus.LOGGED_OUT,
                                           };
-                                          return [new UpdateUserInfo(userInfo),new ServerError({message: res.errorMessage})];
+                                          return [new UpdateUserInfo(userInfo),
+                                            new ServerError({message: res.errorMessage})];
                                         }
                                       })))
                                         );

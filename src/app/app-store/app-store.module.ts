@@ -1,5 +1,5 @@
 import { StoreModule, ActionReducerMap, Action, createFeatureSelector, createSelector } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects'
+import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { UserEffectsService } from './user-effects.service';
 import { UserStatus, AppState, UserState } from './interfaces';
@@ -8,7 +8,7 @@ import { LoggingIn, UpdateUserInfo, LoggingOut, ServerError } from './actions';
 export const reducers: ActionReducerMap<AppState> = {
   user: userReducer,
   errorMessage: errorReducer,
-}
+};
 
 @NgModule({
   imports: [

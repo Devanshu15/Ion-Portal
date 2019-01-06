@@ -18,7 +18,7 @@ export class DashboardComponent {
     this.user = this.store.pipe(select(selectUserInfo));
     this.store.pipe(select(selectUserStatus)).subscribe(
       (status: UserStatus) => {
-        if(status === UserStatus.LOGGED_OUT){
+        if (status === UserStatus.LOGGED_OUT){
           this.router.navigate(['/login']);
         }
       }

@@ -19,7 +19,7 @@ export class AppComponent {
       (status: UserStatus) => {
         this.status = status;
         this.showLoader = false;
-        if(status === UserStatus.LOGGING_IN || status === UserStatus.LOGGING_OUT) {
+        if (status === UserStatus.LOGGING_IN || status === UserStatus.LOGGING_OUT) {
           this.showLoader = true;
         }
       }
@@ -27,9 +27,7 @@ export class AppComponent {
     this.store.pipe(select(selectErrorMessage)).subscribe(
       (error) => {
         if (error && error.message) {
-          this.snackBar.open(error.message, 'Pl try again',{
-            duration: 2000,
-          });
+          this.snackBar.open(error.message, 'Pl try again', {duration: 2000,});
         }
       }
     );
