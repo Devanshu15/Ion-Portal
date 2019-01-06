@@ -12,9 +12,18 @@ This portal is a single page application, built to display following technical c
 
 It currently has 3 views - welcome, login and dashboard. Dashboard is a private view visible to logged in users only.
 
+## Pre requisites
+1. Node.js version 8.x or 10.x.
+2. npm client & npm package manager.
+3. Angular CLI. To install `npm install -g @angular/cli`.
+4. Run `npm install` to install all the required dependencies.
+
+
 ## Web Server
 
-Run `npm start` to build and deploy on the mock server. Also it will start the mock server. Navigate to `http://localhost:3000`.
+Use web server to run the application, since it also starts the server having the required Api's.
+
+Run `npm start` to build and deploy on the server. Also it will start the server. Navigate to `http://localhost:3000`.
 
 Currently the app has only two dummy users:
 1. USERNAME: user1
@@ -24,5 +33,8 @@ Currently the app has only two dummy users:
 
 ## Development server
 
-Run `npm install` and `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-Note: For mocking API, you need additional tools.
+Use devlopment server for front-end development. It starts a mock server and serves the application.
+
+Note: For mocking API, you need may additional tools like postman etc.
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

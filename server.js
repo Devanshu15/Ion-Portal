@@ -20,16 +20,6 @@ function loginUser(username, password) {
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
-});
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
-});
-app.get('/dashboard', (req, res) => {
-res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
-});
-
 app.post('/login', (req, res) => {
   const interval = Math.random() * 3000;
   setTimeout(() => {
@@ -46,6 +36,8 @@ app.get('/logout', (req, res) => {
   
 });
 
-app.use('', express.static(path.join(__dirname, '/dist/my-app')))
-
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.use('', express.static(path.join(__dirname, '/dist/my-app')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
+});
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
