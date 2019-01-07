@@ -51,7 +51,6 @@ export class UserEffectsService implements UserEffects {
                                             lastName: '',
                                             status: UserStatus.LOGGED_OUT,
                                           };
-                                          console.log('success logging out');
                                           return new UpdateUserInfo(userInfo);
                                         } else {
                                           return new ServerError({message: res.errorMessage});
